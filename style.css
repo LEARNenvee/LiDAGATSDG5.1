@@ -1,0 +1,2376 @@
+/*======================================================
+LiDAGAT Version 3.0 (FULLY FIXED)
+STYLE.CSS
+PART 1
+
+Professional Liquid Glass UI
+======================================================*/
+
+/*======================================================
+GOOGLE FONT RESET
+======================================================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:#080A16;
+
+    color:#F4F6FB;
+
+    overflow-x:hidden;
+
+    line-height:1.7;
+
+    transition:background .4s ease, color .4s ease;
+
+}
+
+/*======================================================
+VARIABLES
+======================================================*/
+
+:root{
+
+    --primary:#7C4DFF;
+
+    --secondary:#B388FF;
+
+    --accent:#69F0FF;
+
+    --pink:#FF80AB;
+
+    --glass:rgba(255,255,255,.08);
+
+    --glass-border:rgba(255,255,255,.18);
+
+    --text:#F8F9FF;
+
+    --text-light:#D5D8E8;
+
+    --shadow:
+
+    0 20px 60px rgba(0,0,0,.45);
+
+    --radius:28px;
+
+}
+
+/*======================================================
+AURORA BACKGROUND (default = dark theme)
+======================================================*/
+
+body{
+
+    background:
+
+    radial-gradient(circle at top left,#8A2BE240,transparent 35%),
+
+    radial-gradient(circle at bottom right,#00E5FF30,transparent 35%),
+
+    radial-gradient(circle at center,#5C6BC020,transparent 50%),
+
+    #090B17;
+
+}
+
+/*======================================================
+LIGHT / DARK MODE
+
+script.js toggles a class called "dark" on <body>.
+Since the site's DEFAULT look (above) is already the
+dark aurora theme, body.dark here is styled as the
+ALTERNATE ("light") theme. This matches script.js
+exactly — do not rename one without the other.
+======================================================*/
+
+body.dark{
+
+    background:
+
+    radial-gradient(circle at top left,#8A2BE215,transparent 35%),
+
+    radial-gradient(circle at bottom right,#00E5FF15,transparent 35%),
+
+    #fb05c1;
+
+    color:#14161F;
+
+}
+
+body.dark .glass-card,
+body.dark .glass-panel,
+body.dark .glass-button,
+body.dark .section-badge,
+body.dark .nav-container,
+body.dark #themeButton,
+body.dark #menuButton,
+body.dark input,
+body.dark textarea,
+body.dark .comment,
+body.dark .review-card,
+body.dark .reaction-button,
+body.dark .stats-panel{
+
+    background:rgba(20,22,35,.06);
+
+    border-color:rgba(20,22,35,.12);
+
+    color:#14161F;
+
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6{
+
+    color:#14161F;
+
+}
+
+body.dark p,
+body.dark span,
+body.dark small,
+body.dark .glass-card p,
+body.dark .section-description{
+
+    color:#e5e5f0;
+
+}
+
+body.dark footer{
+
+    background:rgba(20,22,35,.05);
+
+    border-top-color:rgba(20,22,35,.12);
+
+}
+
+body.dark #loader{
+
+    background:#F4F6FB;
+
+}
+
+/*======================================================
+BACKGROUND BLUR
+======================================================*/
+
+.background-blur{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+.orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+
+    opacity:.6;
+
+    animation:float 18s infinite ease-in-out;
+
+}
+
+.orb1{
+
+    width:500px;
+
+    height:500px;
+
+    background:#8A2BE2;
+
+    top:-150px;
+
+    left:-120px;
+
+}
+
+.orb2{
+
+    width:450px;
+
+    height:450px;
+
+    background:#00D4FF;
+
+    right:-120px;
+
+    top:120px;
+
+}
+
+.orb3{
+
+    width:380px;
+
+    height:380px;
+
+    background:#7C4DFF;
+
+    bottom:-100px;
+
+    left:20%;
+
+}
+
+.orb4{
+
+    width:300px;
+
+    height:300px;
+
+    background:#FF80AB;
+
+    bottom:60px;
+
+    right:10%;
+
+}
+
+/*======================================================
+FLOATING ANIMATION
+======================================================*/
+
+@keyframes float{
+
+0%{
+
+transform:
+
+translateY(0)
+
+translateX(0);
+
+}
+
+25%{
+
+transform:
+
+translateY(-25px)
+
+translateX(20px);
+
+}
+
+50%{
+
+transform:
+
+translateY(20px)
+
+translateX(-20px);
+
+}
+
+75%{
+
+transform:
+
+translateY(-15px)
+
+translateX(15px);
+
+}
+
+100%{
+
+transform:
+
+translateY(0)
+
+translateX(0);
+
+}
+
+}
+
+/*======================================================
+TEXT
+======================================================*/
+
+h1,h2,h3,h4,h5,h6{
+
+    font-family:"Poppins",sans-serif;
+
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+p{
+
+    font-family:"Inter", inherit;
+
+    color:var(--text-light);
+
+}
+
+small{
+
+    font-family:"Inter", inherit;
+
+    font-size:.9rem;
+
+    color:#AEB7D6;
+
+}
+
+span{
+
+    font-family:"Inter", inherit;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    font-family:"Inter", inherit;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+/*======================================================
+SECTION
+======================================================*/
+
+.section{
+
+    width:100%;
+
+    padding:120px 9%;
+
+}
+
+.section-header{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 24px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:#B388FF;
+
+    margin-bottom:25px;
+
+    font-weight:600;
+
+}
+
+.section-title{
+
+    font-size:clamp(2.4rem,5vw,4rem);
+
+    margin-bottom:20px;
+
+}
+
+.section-description{
+
+    max-width:760px;
+
+    margin:auto;
+
+    font-size:1.1rem;
+
+}
+
+/*======================================================
+GLASS CARD
+======================================================*/
+
+.glass-card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(30px);
+
+    -webkit-backdrop-filter:blur(30px);
+
+    border-radius:var(--radius);
+
+    padding:40px;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+    transition:.45s;
+
+}
+
+.glass-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(255,255,255,.25),
+
+    transparent);
+
+    top:-60px;
+
+    right:-60px;
+
+}
+
+.glass-card:hover{
+
+    transform:
+
+    translateY(-12px)
+
+    scale(1.02);
+
+    border-color:
+
+    rgba(255,255,255,.35);
+
+}
+
+/*======================================================
+BUTTONS
+======================================================*/
+
+.primary-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    padding:16px 38px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #7C4DFF,
+
+    #00CFFF);
+
+    color:white;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.primary-button:hover{
+
+    transform:
+
+    translateY(-4px);
+
+    box-shadow:
+
+    0 15px 35px
+
+    rgba(124,77,255,.45);
+
+}
+
+.glass-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 38px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+.glass-button:hover{
+
+    background:
+
+    rgba(255,255,255,.15);
+
+}
+/*======================================================
+LiDAGAT Version 3.0
+STYLE.CSS
+PART 2
+
+Loader
+Navbar
+Hero
+======================================================*/
+
+/*======================================================
+LOADER
+======================================================*/
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#090B17;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+    transition:.5s;
+
+}
+
+.loader-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.loader-logo{
+
+    width:120px;
+
+    border-radius:50%;
+
+    animation:loaderFloat 2.5s ease-in-out infinite;
+
+}
+
+.loader-content h1{
+
+    font-size:2.8rem;
+
+    letter-spacing:2px;
+
+}
+
+.loader-content p{
+
+    color:#BFC7E5;
+
+}
+
+.loader-ring{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,.15);
+
+    border-top:5px solid #7C4DFF;
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes loaderFloat{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/*======================================================
+SCROLL PROGRESS
+======================================================*/
+
+#progressContainer{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    z-index:9999;
+
+    background:transparent;
+
+}
+
+#progressBar{
+
+    width:0%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    #7C4DFF,
+
+    #00D4FF,
+
+    #FF80AB);
+
+}
+
+/*======================================================
+HEADER
+======================================================*/
+
+#header{
+
+    position:fixed;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(92%,1400px);
+
+    z-index:999;
+
+}
+
+.nav-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 30px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+}
+
+/*======================================================
+LOGO
+======================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.logo h2{
+
+    font-size:1.3rem;
+
+}
+
+.logo span{
+
+    color:#BFC7E5;
+
+    font-size:.85rem;
+
+}
+
+/*======================================================
+NAVIGATION
+======================================================*/
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+nav a{
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    position:relative;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0%;
+
+    height:2px;
+
+    background:#7C4DFF;
+
+    transition:.35s;
+
+}
+
+nav a:hover::after,
+
+nav a.active::after{
+
+    width:100%;
+
+}
+
+nav a:hover{
+
+    color:#69F0FF;
+
+}
+
+/*======================================================
+NAV BUTTONS
+======================================================*/
+
+.nav-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+#themeButton,
+
+#menuButton{
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+
+    transition:.35s;
+
+    backdrop-filter:blur(15px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+#themeButton:hover,
+
+#menuButton:hover{
+
+    background:#7C4DFF;
+
+    transform:translateY(-3px);
+
+}
+
+/*======================================================
+HERO
+======================================================*/
+
+.hero{
+
+    min-height:100vh;
+
+    padding:170px 9% 100px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    margin-bottom:30px;
+
+    color:#69F0FF;
+
+    font-weight:600;
+
+}
+
+.hero h1{
+
+    font-size:clamp(3rem,6vw,5.5rem);
+
+    line-height:1.1;
+
+    margin-bottom:30px;
+
+}
+
+.hero h1 span{
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #69F0FF,
+
+    #B388FF);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero-tagline{
+
+    font-size:1.3rem;
+
+    font-weight:600;
+
+    color:#69F0FF;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    font-size:1.1rem;
+
+    max-width:650px;
+
+    margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+/*======================================================
+HERO IMAGE — STATS PANEL (replaces the old glass circle)
+======================================================*/
+
+.hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.stats-panel{
+
+    width:100%;
+
+    max-width:460px;
+
+    animation:heroFloat 5s ease-in-out infinite;
+
+}
+
+.stats-panel h3{
+
+    margin-bottom:30px;
+
+    font-size:1.4rem;
+
+}
+
+.progress-item{
+
+    margin-bottom:24px;
+
+}
+
+.progress-item:last-child{
+
+    margin-bottom:0;
+
+}
+
+.progress-label{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:10px;
+
+    font-size:.95rem;
+
+    color:#DCE1F3;
+
+    font-weight:600;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:12px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.1);
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    border-radius:999px;
+
+    background:linear-gradient(90deg,#7C4DFF,#00D4FF);
+
+}
+
+@keyframes heroFloat{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/*======================================================
+RESPONSIVE NAVIGATION
+======================================================*/
+
+@media(max-width:1000px){
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .hero p{
+
+        margin:auto auto 40px;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    nav{
+
+        position:absolute;
+
+        top:95px;
+
+        left:0;
+
+        width:100%;
+
+        display:none;
+
+        background:rgba(20,22,35,.96);
+
+        border-radius:25px;
+
+        backdrop-filter:blur(25px);
+
+        border:1px solid rgba(255,255,255,.15);
+
+        padding:30px;
+
+    }
+
+    nav.show{
+
+        display:block;
+
+    }
+
+    nav ul{
+
+        flex-direction:column;
+
+        gap:22px;
+
+        text-align:center;
+
+    }
+
+}
+
+@media(min-width:1001px){
+
+    #menuButton{
+
+        display:none;
+
+    }
+
+}
+/*======================================================
+LiDAGAT Version 3.0
+STYLE.CSS
+PART 3
+
+About
+Vision
+Mission
+Goals
+Statistics
+Timeline
+Gallery
+======================================================*/
+
+/*======================================================
+GRID LAYOUTS
+======================================================*/
+
+.about-grid,
+.vision-grid,
+.stats-grid,
+.gallery-grid,
+.testimonial-grid,
+.community-grid,
+.review-grid{
+
+    display:grid;
+
+    gap:35px;
+
+}
+
+.about-grid{
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+}
+
+.vision-grid{
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+}
+
+.stats-grid{
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+}
+
+.community-grid{
+
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
+}
+
+.review-grid{
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+}
+
+.testimonial-grid{
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+}
+
+.gallery-grid{
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+}
+
+/*======================================================
+CARD ICONS
+======================================================*/
+
+.card-icon{
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    rgba(124,77,255,.30),
+
+    rgba(0,212,255,.25));
+
+    color:#69F0FF;
+
+    font-size:2rem;
+
+}
+
+.glass-card h3{
+
+    font-size:1.5rem;
+
+    margin-bottom:18px;
+
+}
+
+.glass-card p{
+
+    color:#DCE1F3;
+
+}
+
+/*======================================================
+GOAL LIST
+======================================================*/
+
+.goal-list{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+    margin-top:20px;
+
+}
+
+.goal-list li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#E9ECF8;
+
+}
+
+.goal-list li::before{
+
+    content:"✔";
+
+    color:#69F0FF;
+
+    font-weight:bold;
+
+}
+
+/*======================================================
+ADVOCACY PANEL
+======================================================*/
+
+.advocacy-container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+.glass-panel{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:35px;
+
+    padding:55px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.glass-panel p{
+
+    font-size:1.1rem;
+
+    margin-bottom:28px;
+
+    color:#E4E8F7;
+
+}
+
+/*======================================================
+STATISTICS
+======================================================*/
+
+.stat-card{
+
+    text-align:center;
+
+}
+
+.stat-card h2{
+
+    font-size:4rem;
+
+    color:#69F0FF;
+
+    margin-bottom:12px;
+
+}
+
+.stat-card p{
+
+    font-size:1rem;
+
+    color:#D7DCF2;
+
+    font-weight:600;
+
+}
+
+/*======================================================
+TIMELINE
+======================================================*/
+
+.timeline{
+
+    position:relative;
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:30px 0;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    width:4px;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    #7C4DFF,
+
+    #00D4FF);
+
+    transform:translateX(-50%);
+
+}
+
+.timeline-item{
+
+    width:50%;
+
+    padding:25px 45px;
+
+    position:relative;
+
+}
+
+.timeline-item.left{
+
+    left:0;
+
+}
+
+.timeline-item.right{
+
+    left:50%;
+
+}
+
+.timeline-year{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:#7C4DFF;
+
+    color:white;
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+}
+
+/*======================================================
+GALLERY
+======================================================*/
+
+.gallery-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    cursor:pointer;
+
+    background:#111;
+
+    box-shadow:var(--shadow);
+
+}
+
+.gallery-card img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.gallery-card:hover img{
+
+    transform:scale(1.12);
+
+}
+
+.gallery-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    transparent,
+
+    rgba(253, 252, 252, 0.9));
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:30px;
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.gallery-card:hover .gallery-overlay{
+
+    opacity:1;
+
+}
+
+.gallery-overlay h3{
+
+    color:rgb(10, 2, 2);
+
+    font-size:1.5rem;
+
+}
+
+/*======================================================
+LIGHTBOX (script.js creates this element dynamically —
+it had no matching CSS before, so clicking a gallery
+image did nothing visible)
+======================================================*/
+
+#lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(5,6,15,.92);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:100000;
+
+    padding:40px;
+
+}
+
+#lightbox.show{
+
+    display:flex;
+
+}
+
+#lightboxImage{
+
+    max-width:90vw;
+
+    max-height:85vh;
+
+    border-radius:20px;
+
+    box-shadow:0 30px 80px rgba(0,0,0,.6);
+
+}
+
+#lightboxClose{
+
+    position:absolute;
+
+    top:30px;
+
+    right:40px;
+
+    font-size:2.5rem;
+
+    color:white;
+
+    cursor:pointer;
+
+    line-height:1;
+
+}
+
+/*======================================================
+TESTIMONIALS
+======================================================*/
+
+.testimonial-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.testimonial-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.testimonial-header img{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid rgba(255,255,255,.20);
+
+}
+
+.testimonial-header span{
+
+    color:#AEB7D6;
+
+    font-size:.95rem;
+
+}
+
+/*======================================================
+RESPONSIVE TIMELINE
+======================================================*/
+
+@media(max-width:900px){
+
+.timeline::before{
+
+left:20px;
+
+}
+
+.timeline-item{
+
+width:100%;
+
+left:0 !important;
+
+padding-left:60px;
+
+padding-right:10px;
+
+}
+
+}
+/*======================================================
+LiDAGAT Version 3.0
+STYLE.CSS
+PART 4
+
+Community
+Reviews
+Poll
+Comments
+FAQ
+Contact
+Footer
+======================================================*/
+
+/*======================================================
+FORM ELEMENTS
+======================================================*/
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:18px 22px;
+
+    margin-top:18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    color:white;
+
+    font-size:1rem;
+
+    transition:.35s;
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+    color:#B8C0DD;
+
+}
+
+input:focus,
+textarea:focus{
+
+    border-color:#69F0FF;
+
+    box-shadow:0 0 25px rgba(105,240,255,.25);
+
+}
+
+textarea{
+
+    resize:vertical;
+
+    min-height:180px;
+
+}
+
+/*======================================================
+COMMUNITY
+======================================================*/
+
+.community-grid{
+
+    align-items:start;
+
+}
+
+.community-grid .glass-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+/*======================================================
+POLL
+======================================================*/
+
+#pollForm{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+#pollForm label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#E6EAF7;
+
+    cursor:pointer;
+
+}
+
+#pollForm input[type="radio"]{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#7C4DFF;
+
+}
+
+#pollResult{
+
+    margin-top:25px;
+
+    font-weight:600;
+
+    color:#69F0FF;
+
+}
+
+/*======================================================
+REACTIONS
+======================================================*/
+
+.reaction-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+
+    gap:25px;
+
+}
+
+.reaction-button{
+
+    padding:25px;
+
+    border:none;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    font-size:1.5rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    align-items:center;
+
+}
+
+.reaction-button span{
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+
+}
+
+.reaction-button:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(124,77,255,.20);
+
+}
+
+/*======================================================
+COMMENTS
+======================================================*/
+
+.comment-list{
+
+    margin-top:45px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.comment{
+
+    padding:28px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+}
+
+.comment h4{
+
+    margin-bottom:12px;
+
+}
+
+.comment p{
+
+    color:#D8DEF5;
+
+}
+
+/*======================================================
+REVIEWS
+======================================================*/
+
+.review-grid{
+
+    margin-top:50px;
+
+}
+
+.review-card{
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    transition:.35s;
+
+}
+
+.review-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.review-card h4{
+
+    margin-bottom:15px;
+
+    color:#69F0FF;
+
+}
+
+/*======================================================
+FAQ
+======================================================*/
+
+.faq-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+details{
+
+    overflow:hidden;
+
+}
+
+summary{
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+    list-style:none;
+
+}
+
+summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+details p{
+
+    margin-top:20px;
+
+    color:#D8DEF5;
+
+}
+
+/*======================================================
+CONTACT
+======================================================*/
+
+.contact-form{
+
+    max-width:850px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+/*======================================================
+NEWSLETTER
+======================================================*/
+
+.newsletter{
+
+    text-align:center;
+
+}
+
+.newsletter .glass-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.newsletter-box{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+.newsletter-box input{
+
+    margin-top:0;
+
+}
+
+.newsletter-box button{
+
+    white-space:nowrap;
+
+}
+
+/*======================================================
+FOOTER
+======================================================*/
+
+footer{
+
+    margin-top:120px;
+
+    background:rgba(255,255,255,.04);
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(30px);
+
+}
+
+.footer-container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:80px 9%;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:60px;
+
+}
+
+.footer-brand img{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-bottom:20px;
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.footer-links a{
+
+    color:#CBD3EE;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:#69F0FF;
+
+    transform:translateX(5px);
+
+}
+
+.footer-social{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.footer-social a{
+
+    font-size:2rem;
+
+    color:#CBD3EE;
+
+    transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+    color:#69F0FF;
+
+    transform:scale(1.15);
+
+}
+
+.footer-bottom{
+
+    text-align:center;
+
+    padding:30px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    color:#AEB7D6;
+
+}
+
+.developer-credit{
+
+    margin-top:8px;
+
+    font-size:.85rem;
+
+    color:#B8C0DD;
+
+}
+
+.group-members{
+
+    margin-top:6px;
+
+    font-size:.8rem;
+
+    color:#B8C0DD;
+
+}
+
+/*======================================================
+BACK TO TOP
+======================================================*/
+
+#topButton{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    width:60px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#7C4DFF,#00D4FF);
+
+    color:white;
+
+    font-size:1.5rem;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:999;
+
+    box-shadow:0 15px 35px rgba(124,77,255,.35);
+
+    transition:.35s;
+
+}
+
+#topButton:hover{
+
+    transform:translateY(-5px) scale(1.08);
+
+}
+
+/*======================================================
+RESPONSIVE
+======================================================*/
+
+@media(max-width:900px){
+
+    .footer-container{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .newsletter-box{
+
+        flex-direction:column;
+
+    }
+
+    .reaction-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .reaction-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
